@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    schema: classpath:db/demo.sql
+    environments: development
+    primary:
+      name: testdb0
+      url: jdbc:h2:mem:test0;MODE=MYSQL
+      jdbcUrl: jdbc:h2:mem:test0;MODE=MYSQL
+      username: sa
+      password: sa
+      driver-class-name: org.h2.Driver
+    secondary:
+      name: testdb1
+      url: jdbc:h2:mem:test1;MODE=MYSQL
+      jdbcUrl: jdbc:h2:mem:test1;MODE=MYSQL
+      username: sa
+      password: sa
+      driver-class-name: org.h2.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.iflytek.model
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
