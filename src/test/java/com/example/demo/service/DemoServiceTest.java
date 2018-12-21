@@ -37,12 +37,12 @@ public class DemoServiceTest extends AbstractTestBase {
     public void batchSave(){
         List<Torder> list = Lists.newArrayList();
         Torder tOrder = new Torder();
-        tOrder.setOrderId(70000L);
-        tOrder.setUserId(70000L);
+        tOrder.setOrderId(7000L);
+        tOrder.setUserId(7000L);
         list.add(tOrder);
         Torder tOrder2 = new Torder();
-        tOrder2.setUserId(70001L);
-        tOrder2.setOrderId(70000L);
+        tOrder2.setUserId(7001L);
+        tOrder2.setOrderId(7001L);
         list.add(tOrder2);
         demoService.batchSave(list);
     }
