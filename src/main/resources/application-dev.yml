@@ -21,8 +21,6 @@ sharding:
         password: root
     config:
       sharding:
-        # 默认指针列值生成器类类名称，缺省使用io.shardingsphere.core.keygen.DefaultKeyGenerator
-        # 如果自定义实现io.shardingsphere.core.keygen.KeyGenerator接口并提供无参构造方法
         props:
           sql:
             show: true # 显示sql
@@ -45,7 +43,6 @@ sharding:
               inline:
                 sharding-column: order_id
                 algorithm-expression: t_order_$->{order_id % 2}
-            #key-generator-class-name: com.daniel.sharding.sphere.shardingdemo01.util.keygenerator.MyKeyGenerator
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml

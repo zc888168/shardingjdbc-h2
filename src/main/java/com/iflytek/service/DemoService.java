@@ -35,6 +35,10 @@ public class DemoService {
         mapper.insertBatch(list);
     }
 
+    public int batchSave(List<Torder> list){
+       return mapper.insertBatch(list);
+    }
+
     public Object get(Long id) {
         return mapper.selectByPrimaryKey(id);
     }
